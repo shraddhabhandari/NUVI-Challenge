@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>AngularJS Plunker </title>
+  <script>document.write('<base href="' + document.location + '" />'); </script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" />
+  <script data-require="angular.js@1.2.x" src="https://code.angularjs.org/1.2.28/angular.js" data-semver="1.2.28"></script>
+  <script src="app.js"></script>
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  
+  <body ng-app="myApp">
+  <div ng-controller="myCtrl">
+   <h2>Social Media Analytics</h2> <br/>
+  <p> <button class="btn btn-primary" ng-click="getData()">Show Activities </button>
+  </p>
+  <table ng-show="showActivities">
+  <tr>
+    <th>Actor</th>
+    <th>User Name</th>
+    <th>Description</th>
+    <th>Provider </th>
+    <th>Activity Date </th>
+    <th>Likes</th>
+ </tr>
+ <tr ng-repeat="activity in myData">
+     <td>{{activity.actor_name}}</td>
+     <td>{{activity.actor_username}}</td>
+     <td>{{activity.actor_description}}</td>
+     <td>{{activity.provider}}</td>
+     <td>{{activity.activity_date}}</td>
+     <td> <button class="btn btn-primary" ng-click="activity.activity_likes = activity.activity_likes + 1"> Like </button>{{activity.activity_likes}} likes</td>
+     </tr>
+     </table>
+   </div>
+   </body>
+   </html>
+ 
